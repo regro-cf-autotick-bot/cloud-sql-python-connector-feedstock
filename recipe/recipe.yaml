@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: cloud-sql-python-connector
-  version: "1.22.0"
+  version: 1.23.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 17cab0a669558963abd0121378216ae2b8ee88d11de718072f2ab4b68a97a183
+  sha256: 97f46b48d42b1eac7b96d948bb29efb33168dcf856f77b77691c2671af68d9c9
 
 build:
   number: 0
@@ -29,9 +29,7 @@ requirements:
     - dnspython >=2.0.0
     - requests
     - google-auth >=2.28.0
-    - grpcio
-    - protobuf
-    - googleapis-common-protos
+    - google-cloud-sql >=0.1.1
 tests:
   - python:
       imports:
